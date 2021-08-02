@@ -1,0 +1,22 @@
+{
+  "name": "horochx-wiki",
+  "version": "1.0.0",
+  "description": "my wiki",
+  "scripts": {
+    "dev": "tiddlywiki src --listen",
+    "build": "tiddlywiki src --rendertiddler $:/core/save/all index.html text/plain"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/horochx/horochx-wiki.git"
+  },
+  "author": "horochx",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/horochx/horochx-wiki/issues"
+  },
+  "homepage": "https://github.com/horochx/horochx-wiki#readme",
+  "devDependencies": {
+    "tiddlywiki": "^5.1.23"
+  }
+}
