@@ -1,0 +1,46 @@
+created: 20210803141529934
+modified: 20210803154443538
+tags: WikiText
+title: WikiText 指南
+type: text/vnd.tiddlywiki
+
+WikiText 是类似 [[MarkDown|http://daringfireball.net/projects/markdown/]] 的一种标记语言，用于编写 wiki。
+
+!! 标题
+
+使用 1~6 个 `!` 来创建 `h1` ~ `h6` 的标题，使用 `!.className` 为标题添加名为 `className` 的类。
+
+eg:
+
+```
+! 一级标题
+!! 二级标题
+!!.className 带有类名 `className` 的二级标题
+```
+
+!! 段落
+
+使用空行分隔一行或多行文档以创建段落。
+
+!! 换行
+
+使用 `"""` 创建保留换行的内容。
+
+eg:
+
+```
+"""
+若夫乘天地之正，
+而御六气之辩，
+以游无穷者，
+彼且恶乎待哉？
+故曰：
+至人无己，
+神人无功，
+圣人无名。
+"""
+```
+
+!! 块引用
+
+使用成对的 `<<<` 创建块引用。
