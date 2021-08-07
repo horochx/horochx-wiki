@@ -1,22 +1,31 @@
 created: 20210803141529934
-modified: 20210803154443538
+modified: 20210807105053917
 tags: WikiText
 title: WikiText 指南
 type: text/vnd.tiddlywiki
+
+\define codeWithPreview(code)
+eg:
+
+```$code$
+```
+
+预览:
+
+<div class="my-block">
+$code$
+</div>
+\end
 
 WikiText 是类似 [[MarkDown|http://daringfireball.net/projects/markdown/]] 的一种标记语言，用于编写 wiki。
 
 !! 标题
 
-使用 1~6 个 `!` 来创建 `h1` ~ `h6` 的标题，使用 `!.className` 为标题添加名为 `className` 的类。
+使用 1~6 个 `!` 来创建 `h1` ~ `h6` 的标题，使用 `!.customClassNameExample` 为标题添加名为 `customClassNameExample` 的类。
 
-eg:
-
-```
-! 一级标题
-!! 二级标题
-!!.className 带有类名 `className` 的二级标题
-```
+<<codeWithPreview "
+!!!.customClassNameExample 带有类名 `customClassNameExample` 的三级标题
+">>
 
 !! 段落
 
@@ -26,21 +35,121 @@ eg:
 
 使用 `"""` 创建保留换行的内容。
 
-eg:
-
-```
+<<codeWithPreview '
 """
-若夫乘天地之正，
-而御六气之辩，
-以游无穷者，
-彼且恶乎待哉？
-故曰：
-至人无己，
-神人无功，
-圣人无名。
+可怜无定河边骨，
+犹是春闺梦里人。
 """
-```
+'>>
 
 !! 块引用
 
 使用成对的 `<<<` 创建块引用。
+
+<<codeWithPreview "
+<<<.tc-big-quote
+有两种东西，我们对它们的思考越是深沉和持久，它们所唤起的那种越来越大的惊奇和敬畏就会充溢我们的心灵，这就是繁星密布的苍穹和我心中的道德律。
+<<< 康德
+">>
+
+!! 列表
+
+使用 `*` 创建无序列表的列表项，使用 `#` 创建有序列表项，叠加 `*` 或 `#` 可以创建嵌套列表项。
+
+使用 `;` 创建术语定义，使用 `:` 创建术语描述。
+
+<<codeWithPreview '
+* Item 1
+** Item 1.1
+** Item 1.2
+* Item 2
+*# A
+*## A1
+*## A2
+*# B
+* Item 3
+* <div>
+"""
+峰峦如聚，波涛如怒，
+山河表里潼关路。
+望西都，意踌躇。
+伤心秦汉经行处，宫阙万间都做了土。
+兴，百姓苦；亡，百姓苦。
+"""
+</div>
+* Definitions
+*; TiddlyWiki
+*: a non-linear personal web notebook
+*: A self-contained JavaScript wiki for the browser, Node.js, AWS Lambda etc.
+'>>
+
+!! 表格
+
+使用 `| |` 创建一个单元格，以 `!` 开头的单元格是表头。
+
+单元格使用空格 ` ` 控制水平对齐，使用 `^` 与 `,` 控制垂直对齐。
+
+单元格使用 `~` 与上一格合并，使用 `<` 与左边格子合并，使用 `>` 与右边格子合并。
+
+<<codeWithPreview "
+|!col1|!col2|!col3|!col4|!col5|
+|^1 |^2 |^ 3 |^ 4|^ 5|
+|^6 | <div>7,8,9</div> <div>12,13,14</div> <div>17,18,19</div> |<|<|^ 10|
+|11 |~|<|<| 15|
+|,16 |~|<|<|, 20|
+|,21 |,22 |, 23 |, 24|, 25|
+">>
+
+!! 代码
+
+行内代码使用反引号 `` ` `` 包裹，代码块使用 3 个反引号包裹。
+
+!! 水平线
+
+使用 `---` 创建一条水平线。
+
+<<codeWithPreview "
+---
+">>
+
+!! 链接
+
+使用一对嵌套的中括号 `[[]]` 创建链接。
+
+<<codeWithPreview "
+* [[WikiText 指南]]
+* [[同上|WikiText 指南]]
+* [ext[作为外部链接打开|WikiText 指南]]
+* [[外部链接|https://horochx.org/]]
+">>
+
+!! 图片
+
+图片语法与链接类似。
+
+<<codeWithPreview "
+[img height=60 [placeholder|https://via.placeholder.com/468x60?text=placeholder]]
+">>
+
+!! 文本格式化
+
+<<codeWithPreview "
+''加粗''
+//倾斜//
+__下划线__
+~~删除线~~
+^^上标^^
+,,下标,,
+">>
+
+!! 样式
+
+使用 `@@` 符号为内容添加自定义样式。
+
+<<codeWithPreview "
+@@.customClassNameExample
+@@font-weight: bold;
+@@font-style: italic;
+格式化文本
+@@
+">>

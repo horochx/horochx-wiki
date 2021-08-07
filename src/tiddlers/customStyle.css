@@ -1,0 +1,12 @@
+.customClassNameExample::after {
+  content: "(className is work!)";
+  font-size: 0.8em;
+  color: #cccccc;
+}
+
+.my-block {
+  margin: 1em 0;
+  padding: 4px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
